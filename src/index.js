@@ -199,12 +199,13 @@ taskFourSyncSolution = () => {
 // Task 5 - Node developers
 // part 1 : print results to a file
 printTasksInAFile = () =>{
+    console.log("===================================");
+    console.log("Task 5 - Node developers test.");
     // write all results in to "results.txt" file.
     fs.writeFile("results.txt", FileInput, function(err) {
         if(err) {
             return console.log(err);
         }
-        console.log("===================================");
         console.log("The file was saved!");
         if(runAllTasks){
             sendResponceToHTTPEndPoint();
@@ -216,22 +217,20 @@ printTasksInAFile = () =>{
 // part 2 : send result to HTTP endpoint 
 
 sendResponceToHTTPEndPoint = () =>{
-
+    console.log("===================================");
+    console.log("Task 5 - Sent data to HTTP end point (Frontend developers test)");
     axios.post('/HTTPEndpoint', {
         data:FileInput
       })
       .then(function (response) {
         // console.log(response);
-        console.log("===================================");
-        console.log("Sent data to HTTP end point");
+        
         if(runAllTasks){
             bonasTaskCall();
         }
       })
       .catch(function (error) {
         // console.log(error);
-        console.log("===================================");
-        console.log("Sent data to HTTP end point");
         if(runAllTasks){
             bonasTaskCall();
         }
